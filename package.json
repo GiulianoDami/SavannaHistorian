@@ -1,0 +1,26 @@
+{
+  "name": "savanna-historian",
+  "version": "1.0.0",
+  "description": "A TypeScript tool for analyzing historical ecological descriptions in texts to identify ancient landscape patterns and challenge modern ecological assumptions.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "ecology",
+    "history",
+    "text-analysis",
+    "conservation",
+    "savanna"
+  ],
+  "author": "SavannaHistorian Team",
+  "license": "MIT",
+  "dependencies": {
+    "natural": "^6.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
