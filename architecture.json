@@ -1,0 +1,37 @@
+{
+    "language": "TypeScript",
+    "dependency_file": "package.json",
+    "dependencies": ["natural", "@types/node"],
+    "files": [
+        {
+            "path": "src/types.ts",
+            "description": "Core TypeScript interfaces and type definitions",
+            "exports": ["interface HistoricalText", "interface AnalysisConfig", "interface EcosystemResult", "interface ComparisonResult", "type EcosystemType", "type SourceType"]
+        },
+        {
+            "path": "src/parser.ts",
+            "description": "NLP-based extraction of vegetation and landscape descriptions from historical texts",
+            "exports": ["class TextParser", "method extractIndicators(text: string): string[]", "method parse(text: HistoricalText): ParsedText"]
+        },
+        {
+            "path": "src/classifier.ts",
+            "description": "Matches parsed descriptions to ecosystem types with confidence scoring",
+            "exports": ["class EcologicalClassifier", "method classify(indicators: string[]): EcosystemResult", "method scoreConfidence(result: EcosystemResult): number"]
+        },
+        {
+            "path": "src/analyzer.ts",
+            "description": "Main analysis engine coordinating parsing, classification, and temporal analysis",
+            "exports": ["class SavannaHistorian", "constructor(config: AnalysisConfig)", "method analyze(texts: HistoricalText[]): EcosystemResult[]", "method analyzeTemporal(texts: HistoricalText[]): TemporalAnalysis"]
+        },
+        {
+            "path": "src/integrations.ts",
+            "description": "Modern data comparison and conservation recommendation generation",
+            "exports": ["class ModernDataIntegrator", "method compare(historical: EcosystemResult[], modernData: Buffer): ComparisonResult", "class ConservationPlanner", "method generateRecommendation(analysis: EcosystemResult[]): string"]
+        },
+        {
+            "path": "src/cli.ts",
+            "description": "Command-line interface entry point",
+            "exports": ["function main(argv: string[]): Promise<void>", "function analyzeCommand(args: string[]): Promise<void>", "function recommendCommand(args: string[]): Promise<void>"]
+        }
+    ]
+}
